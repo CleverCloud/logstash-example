@@ -6,12 +6,12 @@ Shows how you can configure logstash to periodically import a mysql table into e
 
 ## Configuration
 
-### Create Elastic Stack (ES) addon
+### Create Elastic Stack (ES) and MYSQL addons
 
 #### Connect your apps
 
 You'll need to connect your app to the ES on Clever Cloud.
-Follow these steps to connect your app deployed on Clever Cloud to ES:
+Follow these steps to connect your app deployed on Clever Cloud to ES and MYSQL:
 
 #### From the Clever Cloud Console
 
@@ -20,16 +20,15 @@ Follow these steps to connect your app deployed on Clever Cloud to ES:
 2. Choose "Link applications" and select your ES app
 3. Environment variables will be created (ES_ADDON_...)
 
+Repeat the same steps for MYSQL addon (that will create MYSQL_ADDON... environment variables).
+
 #### From the Clever [CLI](https://www.clever-cloud.com/doc/reference/clever-tools/create/#creating-an-addon)
 1. `clever login`
-2. Create your add-on and link your app: `clever addon create --region par --plan dev --link <app-name> es-addon <addon-name>`
+2. Create your ES addon and link your app: `clever addon create --region par --plan <plan-name> --link <app-name> es-addon <addon-name>`
 3. Environment variables will be created (ES_ADDON_...)
+4. Create your MYSQL addon and link your app: `clever addon create --region par --plan <plan-name> --link <app-name> mysql-addon <addon-name>`
+5. Environment variables will be created (MYSQL_ADDON_...)
 
-### Create MYSQL addon
-
-You will need to connect your app to your database on Clever Cloud.
-Environment variables will be created (MYSQL_ADDON_...)
- 
 ### logstash.conf settings
 
 In order to dump your data from a database to Elastic Search, you can configure your Dockerfile like the example given in this repository.
