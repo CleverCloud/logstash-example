@@ -2,24 +2,27 @@
 
 ## Description
 
-This is a sample Docker application that shows you how to configure a logstash agent using a [JDBC driver](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html).
+Shows how you can configure logstash to periodically import a mysql table into elasticsearch using the [JDBC driver](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html) input plugin.
 
 ## Configuration
 
 ### Create Elastic Stack (ES) addon
 
-Do not connect the Elastic Stack addon to your apps or you'll get the wrong envrironment variables.
-
 #### Connect your apps
 
-Regardless of the language of your app, you'll need to connect your app to the ES on Clever Cloud.
-
-#### Step 1: From the Clever Cloud Console
-
+You'll need to connect your app to the ES on Clever Cloud.
 Follow these steps to connect your app deployed on Clever Cloud to ES:
 
+#### From the Clever Cloud Console
+
+1. In your personnal space, click on Create -> an add-on -> select Elastic Stack ...
 1. Go to your app menu "Service Dependencies"
-2. Choose "Link applications" and select your ES app.
+2. Choose "Link applications" and select your ES app
+3. Environment variables will be created (ES_ADDON_...)
+
+#### From the Clever [CLI](https://www.clever-cloud.com/doc/reference/clever-tools/create/#creating-an-addon)
+1. `clever login`
+2. Create your add-on and link your app: `clever addon create --region par --plan dev --link <app-name> es-addon <addon-name>`
 3. Environment variables will be created (ES_ADDON_...)
 
 ### Create MYSQL addon
