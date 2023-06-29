@@ -10,7 +10,7 @@ Shows how you can configure logstash to periodically import a mysql table into e
 
 #### Connect your apps
 
-You'll need to connect your app to the ES on Clever Cloud.
+You'll need to connect your app.
 Follow these steps to connect your app deployed on Clever Cloud to ES and MYSQL:
 
 #### From the Clever Cloud Console
