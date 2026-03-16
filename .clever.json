@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "app_id": "app_fb57ace1-d53d-4208-b92a-25e9aba6563f",
+      "org_id": "user_c8ab89f9-c113-4a51-8c41-2202b85946f2",
+      "deploy_url": "https://push-n3-par-clevercloud-customers.services.clever-cloud.com/app_fb57ace1-d53d-4208-b92a-25e9aba6563f.git",
+      "git_ssh_url": "git+ssh://git@push-n3-par-clevercloud-customers.services.clever-cloud.com/app_fb57ace1-d53d-4208-b92a-25e9aba6563f.git",
+      "name": "logstash-example",
+      "alias": "logstash-example"
+    }
+  ]
+}
